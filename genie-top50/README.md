@@ -23,9 +23,9 @@ CREATE TABLE `musicInfos`(
 ) ENGINE = InnoDB;
 ```
 
-## View : rankCountDesc
+## View : rankCountDescByArtist
 ```sql
-CREATE VIEW `rankCountDesc` AS
+CREATE VIEW `rankCountDescByArtist` AS
 SELECT
   `musicInfos`.`artist` AS `artist`,
   COUNT(`musicInfos`.`artist`) AS `count`
@@ -35,6 +35,21 @@ GROUP BY
   `musicInfos`.`artist`
 ORDER BY
   COUNT(`musicInfos`.`artist`) DESC;
+```
+
+## View : rankCountDescByTitle
+```sql
+CREATE VIEW `rankCountDescByTitle` AS
+SELECT
+  artist,
+  title,
+  COUNT(title) AS COUNT
+FROM
+  musicInfos
+GROUP BY
+  title
+ORDER BY
+  COUNT DESC
 ```
 
 # .env (Enviorment Variable Setting File)
