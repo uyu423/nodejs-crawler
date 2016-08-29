@@ -11,9 +11,9 @@
   * `node-qsb` : `SQL` Builder
 
 # Database DDL (MySQL, MariaDB)
-## Table : genieTop50
+## Table : musicInfos
 ```mysql
-CREATE TABLE `genieTop50`.`musicInfos`(
+CREATE TABLE `musicInfos`(
   `idx` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `artist` VARCHAR(255) NOT NULL,
   `title` VARCHAR(255) NOT NULL,
@@ -27,14 +27,14 @@ CREATE TABLE `genieTop50`.`musicInfos`(
 ```mysql
 CREATE VIEW `rankCountDesc` AS
 SELECT
-  `genieTop50`.`musicInfos`.`artist` AS `artist`,
-  COUNT(`genieTop50`.`musicInfos`.`artist`) AS `count`
+  `musicInfos`.`artist` AS `artist`,
+  COUNT(`musicInfos`.`artist`) AS `count`
 FROM
-  `genieTop50`.`musicInfos`
+  `musicInfos`
 GROUP BY
-  `genieTop50`.`musicInfos`.`artist`
+  `musicInfos`.`artist`
 ORDER BY
-  COUNT(`genieTop50`.`musicInfos`.`artist`) DESC;
+  COUNT(`musicInfos`.`artist`) DESC;
 ```
 
 # .env (Enviorment Variable Setting File)
