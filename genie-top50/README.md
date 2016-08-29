@@ -12,7 +12,7 @@
 
 # Database DDL (MySQL, MariaDB)
 ## Table : musicInfos
-```mysql
+```sql
 CREATE TABLE `musicInfos`(
   `idx` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `artist` VARCHAR(255) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE `musicInfos`(
 ```
 
 ## View : rankCountDesc
-```mysql
+```sql
 CREATE VIEW `rankCountDesc` AS
 SELECT
   `musicInfos`.`artist` AS `artist`,
